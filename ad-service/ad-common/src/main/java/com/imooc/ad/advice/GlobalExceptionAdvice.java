@@ -1,0 +1,22 @@
+package com.imooc.ad.advice;
+
+import com.imooc.ad.exception.AdException;
+import com.imooc.ad.vo.CommonResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+/**
+ * @author tangcj
+ * @date 2023/05/05 16:39
+ **/
+@RestControllerAdvice
+public class GlobalExceptionAdvice {
+
+    @ExceptionHandler(value = AdException.class)
+    public CommonResponse<String> handlerAdException(HttpServletRequest request, AdException ex) {
+        CommonResponse<String> response = new CommonResponse<>(-1, "business error");
+        response.setData(ex.getMessage());
+        return response;
+    }
+}
