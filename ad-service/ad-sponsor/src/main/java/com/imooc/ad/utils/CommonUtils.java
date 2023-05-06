@@ -11,15 +11,12 @@ import java.util.Date;
  * @date 2023/05/06 14:07
  **/
 public class CommonUtils {
-
     private static String[] parsePatterns = {
             "yyyy-MM-dd", "yyyy/MM/dd", "yyyy.MM.dd"
     };
-
     public static String md5(String value) {
         return DigestUtils.md5Hex(value).toUpperCase();
     }
-
     public static Date parseStringDate(String dateString) throws AdException {
         try {
             return DateUtils.parseDate(dateString, parsePatterns);

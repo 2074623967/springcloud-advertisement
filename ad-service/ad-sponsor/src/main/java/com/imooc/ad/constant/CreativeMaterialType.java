@@ -5,7 +5,6 @@ package com.imooc.ad.constant;
  * @date 2023/05/06 11:39
  **/
 public enum CreativeMaterialType {
-
     JPG(1, "jpg"),
     BMP(2, "bmp"),
 
@@ -13,11 +12,8 @@ public enum CreativeMaterialType {
     AVI(4, "avi"),
 
     TXY(5, "txt");
-
-
     private int type;
     private String desc;
-
     CreativeMaterialType(int type, String desc) {
         this.type = type;
         this.desc = desc;
