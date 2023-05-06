@@ -8,10 +8,14 @@
     </parent>
 
     <artifactId>ad-service</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>ad-service</name>
     <url>http://maven.apache.org</url>
+    <modules>
+        <module>ad-common</module>
+        <module>ad-sponsor</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

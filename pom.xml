@@ -13,7 +13,6 @@
         <module>ad-eureka</module>
         <module>ad-gateway</module>
         <module>ad-service</module>
-        <module>ad-service/ad-common</module>
     </modules>
 
     <properties>
