@@ -20,14 +20,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class UserServiceImpl implements IUserService {
-
     private final AdUserRepository userRepository;
 
     @Autowired
     public UserServiceImpl(AdUserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
 
     /**
      * @param request
@@ -38,16 +36,16 @@ public class UserServiceImpl implements IUserService {
     @Override
     public CreateUserResponse createUser(CreateUserRequest request) throws AdException {
         //校验参数
-        if(!request.validate()){
+        if (!request.validate()) {
             throw new AdException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
         }
         //判断是否有同名用户存在
         AdUser oldUser = userRepository.findByUsername(request.getUsername());
-        if(oldUser != null){
+        if (oldUser != null) {
             throw new AdException(Constants.ErrorMsg.SAME_NAME_ERROR);
         }
         //开始创建用户
         AdUser newUser = userRepository.save(new AdUser(request.getUsername(), CommonUtils.md5(request.getUsername())));
-        return new CreateUserResponse(newUser.getId(),newUser.getUsername(),newUser.getToken(),newUser.getCreateTime(),newUser.getUpdateTime());
+        return new CreateUserResponse(newUser.getId(), newUser.getUsername(), newUser.getToken(), newUser.getCreateTime(), newUser.getUpdateTime());
     }
 }
