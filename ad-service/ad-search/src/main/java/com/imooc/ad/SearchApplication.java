@@ -23,8 +23,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @SpringBootApplication
-public class SearchApplication
-{
+public class SearchApplication {
     public static void main(String[] args) {
         SpringApplication.run(SearchApplication.class);
     }
