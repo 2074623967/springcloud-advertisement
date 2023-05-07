@@ -87,6 +87,9 @@ public class AdPlanServiceImpl implements IAdPlanService {
             throw new AdException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
         }
         AdPlan plan = planRepository.findByIdAndUserId(request.getId(), request.getUserId());
+        if (plan == null) {
+            throw new AdException(Constants.ErrorMsg.RECORD_NOT_FOUND);
+        }
         if (request.getPlanName() != null) {
             plan.setPlanName(request.getPlanName());
         }
