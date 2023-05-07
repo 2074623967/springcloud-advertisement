@@ -9,7 +9,7 @@ eureka:
       defaultZone: http://server1:8000/eureka/
 
 zuul:
-  prefix: /javaedge
+  prefix: /imooc
   routes:
     sponsor:
       path: /ad-sponsor/**
