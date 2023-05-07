@@ -167,7 +167,7 @@ public class AdUnitServiceImpl implements IAdUnitService {
                 .map(CreativeUnitRequest.CreativeUnitItem::getCreativeId)
                 .collect(Collectors.toList());
 
-        if (!(isRelatedUnitExist(unitIds) && isRelatedUnitExist(creativeIds))) {
+        if (!(isRelatedUnitExist(unitIds) && isRelatedCreativeExist(creativeIds))) {
             throw new AdException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
         }
         List<CreativeUnit> creativeUnits = new ArrayList<>();
