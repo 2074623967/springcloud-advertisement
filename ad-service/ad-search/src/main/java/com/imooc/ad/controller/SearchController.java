@@ -2,6 +2,7 @@ package com.imooc.ad.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.imooc.ad.annotation.IgnoreResponseAdvice;
+import com.imooc.ad.client.SponsorClient;
 import com.imooc.ad.client.vo.AdPlan;
 import com.imooc.ad.client.vo.AdPlanGetRequest;
 import com.imooc.ad.vo.CommonResponse;
@@ -23,8 +24,18 @@ public class SearchController {
 
     private final RestTemplate restTemplate;
 
-    public SearchController(RestTemplate restTemplate) {
+    private final SponsorClient sponsorClient;
+
+    public SearchController(RestTemplate restTemplate, SponsorClient sponsorClient) {
         this.restTemplate = restTemplate;
+        this.sponsorClient = sponsorClient;
+    }
+
+    @IgnoreResponseAdvice
+    @PostMapping("/getAdPlans")
+    public CommonResponse<List<AdPlan>> getAdPlans(@RequestBody AdPlanGetRequest request) {
+        log.info("ad-search: getAdPlans -> {}", JSON.toJSONString(request));
+        return sponsorClient.getAdPlans(request);
     }
 
     @SuppressWarnings("all")
