@@ -1,4 +1,4 @@
-package com.imooc.ad.listener;
+package com.imooc.ad.mysql.listener;
 
 import com.imooc.ad.mysql.dto.BinlogRowData;
 
