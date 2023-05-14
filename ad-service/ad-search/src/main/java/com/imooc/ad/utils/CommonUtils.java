@@ -1,9 +1,14 @@
 package com.imooc.ad.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.time.DateUtils;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Supplier;
 
 /**
@@ -27,5 +32,29 @@ public class CommonUtils {
         return result.toString();
     }
 
+    /**
+     * 日期解析
+     *
+     * @param dateString
+     * @return Date
+     **/
+    public static Date parseStringDate(String dateString) {
+
+        try {
+
+            DateFormat dateFormat = new SimpleDateFormat(
+                    "EEE MMM dd HH:mm:ss zzz yyyy",
+                    Locale.US
+            );
+            return DateUtils.addHours(
+                    dateFormat.parse(dateString),
+                    -8
+            );
+
+        } catch (ParseException ex) {
+            log.error("parseStringDate error: {}", dateString);
+            return null;
+        }
+    }
 
 }
