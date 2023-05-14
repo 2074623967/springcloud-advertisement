@@ -16,9 +16,9 @@ spring:
       hibernate.format_sql: true
     open-in-view: false
   datasource:
-    url: jdbc:mysql://192.168.159.4:3306/javaedge_ad_data?autoReconnect=true
+    url: jdbc:mysql://192.168.159.4:3306/muke?autoReconnect=true
     username: root
-    password: tangcj
+    password: 123456
     tomcat:
       max-active: 4
       min-idle: 2

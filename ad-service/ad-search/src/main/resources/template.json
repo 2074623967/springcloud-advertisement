@@ -1,5 +1,5 @@
 {
-  "database": "javaedge_ad_data",
+  "database": "muke",
   "tableList": [
     {
       "tableName": "ad_plan",
