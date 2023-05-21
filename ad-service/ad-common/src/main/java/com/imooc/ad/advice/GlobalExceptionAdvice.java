@@ -2,9 +2,10 @@ package com.imooc.ad.advice;
 
 import com.imooc.ad.exception.AdException;
 import com.imooc.ad.vo.CommonResponse;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author tangcj

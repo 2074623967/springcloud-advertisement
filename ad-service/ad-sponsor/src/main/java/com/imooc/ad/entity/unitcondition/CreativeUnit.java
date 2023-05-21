@@ -1,6 +1,6 @@
 package com.imooc.ad.entity.unitcondition;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
